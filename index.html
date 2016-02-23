@@ -35,7 +35,8 @@
 		Change background image based on user input*/
 
 
-			function updateBackground(){
+			function updateBackground(e){
+				e.preventDefault();
 				var input = $('#city-type').val();
 				//get user input
 				if (input === "New York" || input === "New York City" || input === "NYC"){
@@ -60,7 +61,7 @@
 
 			}
 
-			$('#submit-btn').on('submit', updateBackground);
+			$('form').on('submit', updateBackground);
 			//call the update background function when pressing submit button
 
 		</script>
