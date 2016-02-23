@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>City Background</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src='http://code.jquery.com/jquery-latest.min.js'></script>
+
+	</head>
+	<body>
+		<header>
+			<div class="title">
+				<h1>CitiPix</h1>
+				<p>Your Cities, Your Pix</p>
+			</div>
+		</header>
+			<div class="container">
+				<form>
+					<input type="text" id="city-type" placeholder="Enter a city name...">
+					<input type="submit" value="Update" id="submit-btn">
+				</form>
+			</div>
+
+
+		<script>
+
+		/*Get user input
+		Compare user input to recognizable string
+		Change background image based on user input*/
+
+
+			function updateBackground(){
+				var input = $('#city-type').val();
+				//get user input
+				if (input === "New York" || input === "New York City" || input === "NYC"){
+					//add various permutations of user input
+					$('body').removeClass();
+					//remove any old classes
+					$('body').addClass('nyc');
+					//add new background image
+				} else if (input === "San Francisco" || input === "San Fran" || input === "SF"){
+					$('body').removeClass();
+					$('body').addClass('sf');
+				} else if (input === "Los Angeles" || input === "LA" || input === "LAX"){
+					$('body').removeClass();
+					$('body').addClass('la');
+				} else if (input === "Austin" || input === "ATX"){
+					$('body').removeClass();
+					$('body').addClass('austin');
+				} else if (input === "Sydney" || input === "SYD"){
+					$('body').removeClass();
+					$('body').addClass('sydney');
+				}
+
+			}
+
+			$('#submit-btn').on('submit', updateBackground);
+			//call the update background function when pressing submit button
+
+		</script>
+
+
+
+	</body>
+</html>
